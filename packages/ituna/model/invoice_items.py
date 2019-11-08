@@ -14,3 +14,4 @@ class Table(object):
                                                                                                                     meta_thmode='dialog')
         tbl.column('unitprice',dtype='N',size='10,2',name_long='Unit Price',legacy_name='UnitPrice')
         tbl.column('quantity',dtype='I',name_long='Quantity',legacy_name='Quantity')
+        tbl.formulaColumn('totprice', '$unitprice*$quantity',name_long='Tot Price', dtype='N')

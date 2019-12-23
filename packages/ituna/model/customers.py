@@ -24,3 +24,6 @@ class Table(object):
                                                                                                                                     onDelete='raise', 
                                                                                                                                     meta_thmode='dialog')
         tbl.formulaColumn('full_name', "$firstname ||' '||$lastname", name_long='Full name')
+        tbl.formulaColumn('n_invoices', select=dict(columns='COUNT(*)',
+                                                    table='ituna.invoices',
+                                                    where='$customerid=#THIS.customerid'), name_long='N. Invoices')
